@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Pixel Trend | Agencia Digital - Diseño, Ads y Automatización</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Colores principales de la marca (Violeta, Azul y Naranja del logo)
+              primary: "#8B5CF6", // Violeta principal
+              secondary: "#3B82F6", // Azul
+              accent: "#F97316", // Naranja
+              "background-light": "#F8FAFC",
+              "background-dark": "#020617",
+              // Accents detallados para las cards de servicios
+              "accent-orange": "#F97316",
+              "accent-purple": "#a855f7",
+              "accent-blue": "#3b82f6"
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              '2xl': '1.5rem',
+            },
+          },
+        },
+      };
+    </script>
+    
+    <style>
+        /* Gradiente para textos y elementos visuales (Fusionado: Naranja, Violeta, Azul) */
+        .gradient-text {
+            background: linear-gradient(135deg, #F97316 0%, #8B5CF6 50%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Efecto de 'Glow' del Hero */
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+            z-index: -1;
+        }
+        
+        /* Nav Bar tipo Glassmorphism (Usado en Servicios y Portfolio) */
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(2, 6, 23, 0.8);
+        }
+
+        /* Borde Gradiente (Usado en Servicios y Portfolio) */
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(var(--background-dark), var(--background-dark)) padding-box,
+                        linear-gradient(135deg, #F97316, #8B5CF6, #3B82F6) border-box;
+            border: 2px solid transparent;
+            border-radius: 1.5rem;
+        }
+        
+        /* Animación para el cohete */
+        @keyframes bounce-custom {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+        .animate-bounce-custom {
+          animation: bounce-custom 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-900 bg-background-light dark:bg-background-dark dark:text-slate-100 transition-colors duration-300">
+
+<nav class="fixed w-full z-50 glass-nav border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex items-center gap-2">
+                <img alt="Pixel Trend Logo" class="h-10 w-auto rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxxfWT25by6Q2rBPov5HhEVWA3ZOgKMQ4IXPqy8zMy0KM0zO7Nrr5z5c9eXxcREAFBvhhXd8JVoLZiWMrfT9QnsNSAGL_J_N7lTjTtWFAoP9lx0zbU0FZmboMnaX0D2flq0kwy_WQHdP0SMAWxd4TG-KXq8vQl1CvfIhmi-eJ7Xfk7uE4hUnOWykujSKKpq6nP4nBn4nf_1x6dkH5c4kscyjRFqyK2b3940asjfM_EluaSP2qt5wH-nO3rH5MwlRnDrufgeskjC1o"/>
+                <span class="text-xl font-extrabold tracking-tight hidden sm:block">Pixel <span class="gradient-text">Trend</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#home">Inicio</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios">Servicios</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#portfolio">Portafolio</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#contacto">Contacto</a>
+                <a class="bg-primary hover:bg-opacity-90 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all" href="#contacto">
+                    Hablemos
+                </a>
+            </div>
+            <div class="md:hidden">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section id="home" class="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
+        <div class="hero-glow top-0 right-0"></div>
+        <div class="hero-glow bottom-0 left-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-bold tracking-widest uppercase mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+                    Agencia Digital de Próxima Generación
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-8">
+                    Impulsamos tu <br/>
+                    <span class="gradient-text">Crecimiento Digital</span> <br/>
+                    con Creatividad
+                </h1>
+                <p class="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0">
+                    Transformamos marcas a través de soluciones de diseño vanguardista, estrategias de pauta publicitaria y automatización inteligente.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a class="px-8 py-4 bg-primary text-white font-bold rounded-2xl hover:scale-105 transition-transform shadow-lg shadow-primary/20 flex items-center justify-center gap-2" href="#contacto">
+                        Eleva tu Marca. Agenda una Consultoría
+                        <span class="material-icons-outlined">arrow_forward</span>
+                    </a>
+                    <a class="px-8 py-4 border border-slate-300 dark:border-slate-700 font-bold rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center justify-center" href="#portfolio">
+                        Nuestros Proyectos
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <div class="relative z-10 animate-bounce-custom">
+                    <img alt="Pixel Trend Rocket Graphic" class="w-full max-w-[500px] mx-auto filter drop-shadow-[0_20px_50px_rgba(139,92,246,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACf-eb1-KkCxVslW_qXdW3buUd9Nyf5KqjiLeBsa7OZttf_BLH9k7oFv8sVegtIfJpUEXV-3ysZpYBy-zGMBUNOuZqhQSXGvliSODqQwj1jPoLpXrfilTwjmIMe9rSx-Rkas8VSZRy2GNy-OTOFr4MaduvQpPKACou63YrykhUo1btQuUA2CjNVIU-kAlIn54x2cbcQqoaYQ2C3UdMZD8McRhlaqpplYvZUOUVtTNRC8JCsp0uVXl0oCdC_Gc1HOf6Mu44nSMIytE"/>
+                </div>
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 dark:bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base font-bold text-primary tracking-widest uppercase mb-4">Nuestra Experiencia</h2>
+                <p class="text-3xl lg:text-5xl font-extrabold">Soluciones que Escalan Negocios</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons-outlined text-orange-500 text-3xl">palette</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Diseño</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        Creamos identidades visuales memorables y experiencias de usuario que cautivan desde el primer pixel. UI/UX, branding y material gráfico de alto impacto.
+                    </p>
+                    <a class="inline-flex items-center gap-2 font-bold text-primary group-hover:gap-4 transition-all" href="#servicios">
+                        Saber más <span class="material-icons-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+                <div class="group p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons-outlined text-purple-500 text-3xl">campaign</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Ads</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        Maximizamos tu retorno de inversión con campañas segmentadas en Google, Meta y LinkedIn. Estrategias basadas en datos para resultados reales.
+                    </p>
+                    <a class="inline-flex items-center gap-2 font-bold text-primary group-hover:gap-4 transition-all" href="#servicios">
+                        Saber más <span class="material-icons-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+                <div class="group p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons-outlined text-blue-500 text-3xl">smart_toy</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Automatización</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        Optimizamos tus procesos de venta y comunicación mediante flujos inteligentes. Ahorra tiempo y escala tus operaciones sin esfuerzo adicional.
+                    </p>
+                    <a class="inline-flex items-center gap-2 font-bold text-primary group-hover:gap-4 transition-all" href="#servicios">
+                        Saber más <span class="material-icons-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl lg:text-5xl font-extrabold mb-2 gradient-text">+150</div>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Proyectos Lanzados</p>
+                </div>
+                <div>
+                    <div class="text-4xl lg:text-5xl font-extrabold mb-2 gradient-text">98%</div>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Clientes Satisfechos</p>
+                </div>
+                <div>
+                    <div class="text-4xl lg:text-5xl font-extrabold mb-2 gradient-text">5M+</div>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Conversiones Generadas</p>
+                </div>
+                <div>
+                    <div class="text-4xl lg:text-5xl font-extrabold mb-2 gradient-text">10+</div>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Premios de Diseño</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="pt-20 pb-32 px-6">
+        <div class="max-w-7xl mx-auto text-center relative mb-20">
+            <span class="inline-block py-1 px-3 mb-6 bg-primary/10 border border-primary/20 rounded-full text-xs font-bold uppercase tracking-widest text-primary">Detalle de Soluciones</span>
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                Potenciamos tu <br/>
+                <span class="gradient-text">Ecosistema Digital</span>
+            </h2>
+            <p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+                Combinamos diseño de vanguardia, estrategias de pauta efectivas y automatización inteligente para escalar tu negocio.
+            </p>
+        </div>
+
+        <div class="max-w-7xl mx-auto space-y-32">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-accent">brush</span>
+                        <h3 class="text-3xl font-bold">Diseño Estratégico</h3>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 text-lg">
+                        Creamos experiencias visuales que no solo se ven increíbles, sino que están diseñadas para convertir y fidelizar a tu audiencia.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-accent text-sm mt-1">check_circle</span>
+                            <div>
+                                <h4 class="font-bold">UX/UI Design</h4>
+                                <p class="text-sm text-slate-500">Interfaces intuitivas centradas en el usuario para web y móvil.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-accent text-sm mt-1">check_circle</span>
+                            <div>
+                                <h4 class="font-bold">Branding & Identidad</h4>
+                                <p class="text-sm text-slate-500">Construimos marcas memorables con un lenguaje visual coherente.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 lg:order-2 gradient-border p-8 overflow-hidden group">
+                    <img alt="UI/UX Design Mockup" class="rounded-2xl shadow-2xl transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXIr_frsiEs6qBxXRXK1hGaq7Lg3H6yahdDW-Ut2Aia2pa5dXjKteI7N1yNLBcRlFi95tb_dS1noqJw1K7gYGNUvZ0qtLkKY-ELhTvqMIK3zXWETm9lO55nC1ipBij5dwOZ_yIddirFcAOFmC6wnC5TJqXpXadxeU0bTDJO3jjD9oaIaBIVptXF3wOe33lMOAZAtsXR5ZDCxfO2FCxUfd9ijEI0lvR5h82W_WmTJA8VmrZ3lhcvTmAbp-1xbWozLMzuthLIf0uwMM"/>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="gradient-border p-8 overflow-hidden group">
+                    <img alt="Ads and Data Analytics" class="rounded-2xl shadow-2xl transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCspuK3D0cmMPYxWbc0ZeOzTcnQvz0CzaHk2XTsfQFU7lbKTKhufMANYRX0CNy4Xc678sMRd55-yqZ4lfAfFNK4qGqi-s8M4h_-cpeZUGt0bsFfc6_ej7Rav_rAop0JTPuy1jKkSvGVrSf4HHU3J-I2WYAQP-4UUdycpr2qrOKWI5uylJdfgxMLF1GiwbFqYg4nCVwYCnZk-0eDjCDwhyW5aTyx1G9kPFhDApA3tdmLiVo99d8K0WXXA0pVyh5gd-Sm4pauunAoQW0"/>
+                </div>
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary">ads_click</span>
+                        <h3 class="text-3xl font-bold">Publicidad de Alto Impacto</h3>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 text-lg">
+                        Llevamos tu mensaje a las personas adecuadas en el momento preciso para maximizar tu retorno de inversión.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-white/5 dark:bg-white/5 p-6 rounded-2xl border border-white/5">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">campaign</span> Meta Ads
+                            </h4>
+                            <p class="text-sm text-slate-500">Facebook e Instagram con segmentación avanzada.</p>
+                        </div>
+                        <div class="bg-white/5 dark:bg-white/5 p-6 rounded-2xl border border-white/5">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">search</span> Google Ads
+                            </h4>
+                            <p class="text-sm text-slate-500">Search, Display y YouTube para captar demanda activa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-secondary">smart_toy</span>
+                        <h3 class="text-3xl font-bold">Automatización de Procesos</h3>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 text-lg">
+                        Libera tiempo y reduce errores humanos implementando sistemas que trabajan por ti las 24 horas del día.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">hub</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Ecosistemas CRM</h4>
+                                <p class="text-sm text-slate-500">Implementación de HubSpot o Pipedrive para gestionar tus leads de forma eficiente.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">forum</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Chatbots & AI</h4>
+                                <p class="text-sm text-slate-500">Respuestas instantáneas y calificación de prospectos automatizada en WhatsApp y Web.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 gradient-border p-8 overflow-hidden group">
+                    <img alt="Automation and Dashboard" class="rounded-2xl shadow-2xl transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwegs4zUQ_UjY93zzJCscLvSetNkyUVd4pYTklbEHVmJefRKuR2Aa3f-myzeeYnCCAMvF_AJmhXmBqK22HWwPdaUGUjH5Eau7V2AwH-nSLP5o9uagf8gkIvWAweQI4DFMRiyHs8sQerC-CCi5bhLgMvBcX7b2cIbbvzzVWmr608F9A56jHZugziSnEDAGha98sg9KSQ-Zte6HfPxFL7dxRSliVoo-kAMfkOFMr4_KuggLDmMnk-6--ODbgCCoVDw0GgQVR9tQFTm4"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="pt-20 pb-20 px-6">
+        <div class="max-w-7xl mx-auto mb-20 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4">
+                Casos de Éxito
+            </span>
+            <h2 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+                Transformamos ideas en <br/>
+                <span class="gradient-text">Resultados Exponenciales</span>
+            </h2>
+            <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg md:text-xl">
+                Diseño boutique, pauta publicitaria de alto impacto y automatización inteligente para marcas que buscan liderar su industria.
+            </p>
+        </div>
+        <div class="max-w-7xl mx-auto mb-12 flex flex-wrap justify-center gap-4">
+            <button class="px-6 py-2 rounded-full bg-primary text-white font-semibold">Todos</button>
+            <button class="px-6 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary transition-all">Ads & PPC</button>
+            <button class="px-6 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary transition-all">Diseño UI/UX</button>
+            <button class="px-6 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary transition-all">Automatización</button>
+        </div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all hover:-translate-y-2">
+                <div class="aspect-video overflow-hidden">
+                    <img alt="E-commerce ROI Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJEnfV8xYigWkA4UDJdK2qWozok7j8wOYxb67D1NvWNDaNJG3wntvalzQqe_cfUAoP6C95AWH64H9OhO0qkFJTIfJlqJfbn2_BsmvD8bGxcNRtOWQNgBVGX3v2nefMX7ildLTOCGhMuPhQVztznRqnkwILC28kQz8Gq9KfPSHKZ2MHYOgdxrY_VQ1yZF-Fw9C4WB4Zgr4r35W4_o4MI4dQ-UpENJrVpDcHXWnPYo5ilRnTT2wtCdO1FqzdJOkZh0OaOmAl5BCwpc0"/>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">+340% ROI en Campañas Meta Ads</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Estrategia integral de escalado para marca de moda premium, optimizando el embudo de conversión.</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all hover:-translate-y-2">
+                <div class="aspect-video overflow-hidden">
+                    <img alt="Dashboard Automation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeqdXuDRPuU1APDHYXnmE42UC3a5pMHUQqJu8C9aqMuAULdPPu4mG6sKPR0pq8Z_ZKyXaygAhDVXFmiJUKa55TbOmel0k3pUMB1w6Vo2fK-uq6wd1J4ElFwTno_ODHFY99zQNsryGJOfs55onrESiNPuB9HvNxDf7EYKyAv9ICgzXmEyDINXahUHsfRYrXFU4D9sBp_Hn53bll_NQ9VPLaWTY95lARw8nVdBUz_f2Wq8yDXZsnZxU-OPBBsBrSwMpyWcGo8aOGJ70"/>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Ahorro de 40h mensuales en Operaciones</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Integración de CRM y flujos de trabajo automatizados con IA para gestión de leads en tiempo real.</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all hover:-translate-y-2">
+                <div class="aspect-video overflow-hidden">
+                    <img alt="UI Design Portfolio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzC_kRhvF7EHzM6PYyEtPbrxsBSyMBQDtMBSZ1OWJDKn637Xp9Xl09DPfZaazBNwIKZ2yTYnBkBIFdba2kAwsV8KR8rnCLsW8giX4TUMKAOE6RzOhfNChZJiNwMpFaqhStsUXdZDRGlhPnGd8O6TRun0xloXlFpNHfSUf2EsDbu8id4o8x_bsfjmg5B8Cv_0EpMyzs6AZ1p1p_oSiL-gcUZzwwwceDKsE7yZsUGokwYOjRpDa1Z2hT-w3a3VzEW_FoCe5ics4cdIw"/>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Rediseño UI/UX App Financiera</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Modernización de interfaz enfocada en retención de usuarios y simplicidad operativa.</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all hover:-translate-y-2">
+                <div class="aspect-video overflow-hidden">
+                    <img alt="Data Analytics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPYVF-fNtqO4P4xIDeAUXkcvEW4Lb6GoW_iySMISP3u1kkca1o66KlTDMT7LpynXIoSH1slAbUaWWPfOnHECHkQTmub-2in6-lx6R3lT1DbHa7xlgigjGVyRb32BIv2dvIaQ6MaeWwYsP306_mM8_W1X3X2kqFELcpC9YLNP145vusFlnr5MH_t9Zrcd4FpixAvFL_L0mX_rTHXUHu7iFwCuAYydefrB7EIJpyTrMVD9SvNCj49FXONYoqsYXJ_242guirDLDWl0s"/>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Generación de +500 Leads Cualificados</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Sistema de prospección automatizada para desarrolladora inmobiliaria de lujo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 px-4">
+        <div class="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-br from-primary via-purple-700 to-indigo-900 p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+            <div class="relative z-10">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-8">¿Listo para despegar tu presencia digital?</h2>
+                <p class="text-xl text-purple-100 mb-12 max-w-2xl mx-auto">
+                    Conversemos sobre tus objetivos y tracemos la ruta hacia el éxito de tu marca.
+                </p>
+                <a href="#contacto" class="bg-white text-primary px-10 py-5 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-colors shadow-xl">
+                    Agendar Consultoría Gratuita
+                </a>
+            </div>
+            <div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
+        </div>
+    </section>
+    <section id="contact-form" class="py-24 px-4 bg-background-dark">
+    <div class="max-w-7xl mx-auto rounded-[2rem] bg-slate-900 border border-slate-800 p-8 md:p-16 relative overflow-hidden">
+        
+        <div class="absolute -top-10 -left-10 w-48 h-48 bg-primary/10 blur-[100px] rounded-full"></div>
+        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-accent/10 blur-[100px] rounded-full"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+            
+            <div>
+                <span class="text-xl font-bold text-accent">Contáctanos</span>
+                <h2 class="text-5xl lg:text-7xl font-extrabold leading-tight mt-4 mb-6">
+                    Creemos Algo <br/>
+                    <span class="gradient-text">Significativo</span>
+                </h2>
+                <p class="text-xl text-slate-400 mb-8">
+                    Ya sea que empieces de cero o necesites un *refresh* de marca, estoy aquí para ayudar a dar vida a tu visión.
+                </p>
+                <p class="text-slate-500 mb-10">
+                    ¿Listo para hablar? Llena el formulario o envíanos un mensaje: veamos cómo podemos trabajar juntos.
+                </p>
+                
+                <div class="flex gap-4">
+                    <a class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#" aria-label="Instagram">
+                        <span class="material-icons-outlined text-xl">camera_alt</span>
+                    </a>
+                    <a class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#" aria-label="LinkedIn">
+                        <span class="material-icons-outlined text-xl">business</span>
+                    </a>
+                    <a class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#" aria-label="Twitter">
+                        <span class="material-icons-outlined text-xl">share</span>
+                    </a>
+                </div>
+            </div>
+            
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="first-name" class="block text-sm font-medium text-slate-400 mb-2">Nombre</label>
+                        <input type="text" id="first-name" placeholder="Tu Nombre" class="w-full bg-slate-800 border-none text-white rounded-xl p-4 focus:ring-primary focus:border-primary placeholder:text-slate-600 transition-colors">
+                    </div>
+                    <div>
+                        <label for="last-name" class="block text-sm font-medium text-slate-400 mb-2">Apellido</label>
+                        <input type="text" id="last-name" placeholder="Tu Apellido" class="w-full bg-slate-800 border-none text-white rounded-xl p-4 focus:ring-primary focus:border-primary placeholder:text-slate-600 transition-colors">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-sm font-medium text-slate-400 mb-2">Email</label>
+                    <input type="email" id="email" placeholder="email@dominio.com" class="w-full bg-slate-800 border-none text-white rounded-xl p-4 focus:ring-primary focus:border-primary placeholder:text-slate-600 transition-colors">
+                </div>
+
+                <div>
+                    <label for="service" class="block text-sm font-medium text-slate-400 mb-2">Servicio de Interés</label>
+                    <select id="service" class="w-full bg-slate-800 border-none text-white rounded-xl p-4 focus:ring-primary focus:border-primary placeholder:text-slate-600 transition-colors">
+                        <option class="bg-slate-900" value="general">Selecciona un servicio...</option>
+                        <option class="bg-slate-900" value="design">Diseño UI/UX & Branding</option>
+                        <option class="bg-slate-900" value="ads">Publicidad (Ads)</option>
+                        <option class="bg-slate-900" value="automation">Automatización & CRM</option>
+                        <option class="bg-slate-900" value="full">Estrategia Digital Integral</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-400 mb-2">Mensaje</label>
+                    <textarea id="message" rows="5" placeholder="Cuéntanos más sobre tu proyecto y objetivos..." class="w-full bg-slate-800 border-none text-white rounded-xl p-4 focus:ring-primary focus:border-primary placeholder:text-slate-600 transition-colors"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-accent hover:bg-opacity-90 text-white font-extrabold rounded-2xl py-4 text-lg transition-all shadow-lg shadow-accent/30">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="py-20 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-6">
+                    <img alt="Pixel Trend Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4fc4zDbMVgPHxiT8Dd6YlsbmPOupmpEBY7DyQM_VSVEN2Qvk-UfG_BIizpGL3wY79S_tOklewSrZzGq_LwFhAzJIVYJd88OqWLNvbaAE2psdu8B56m00zoOIf6dPwanYCB4esMESRTwdUvDQFdgMulSbOvkr3utD71b7kmT-E4EnMnCIeiGqxj3ZFx-G2P7_sIRskGrhia5SYyKMRi-MnhVy2Ok050fUCHZl98a0sJjbfDXgRSDHe0stMKlOtDWTVYDTKrBZsrT4"/>
+                    <span class="text-lg font-bold">Pixel Trend</span>
+                </div>
+                <p class="text-slate-500 dark:text-slate-400 max-w-sm">
+                    Agencia boutique especializada en elevar marcas digitales a través de la fusión perfecta entre diseño, pauta y tecnología.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Enlaces</h4>
+                <ul class="space-y-4 text-slate-500 dark:text-slate-400">
+                    <li><a class="hover:text-primary transition-colors" href="#servicios">Servicios</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#portfolio">Portfolio</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Carreras</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Contacto</h4>
+                <ul class="space-y-4 text-slate-500 dark:text-slate-400">
+                    <li>hola@pixeltrend.agency</li>
+                    <li>+54 11 1234 5678</li>
+                    <li>Av. Libertador 123, BA</li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-200 dark:border-slate-800 gap-4">
+            <p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 Pixel Trend Agency. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a class="text-slate-400 hover:text-primary transition-colors" href="#">Instagram</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="#">LinkedIn</a>
+                <a class="text-slate-400 hover:text-primary transition-colors" href="#">Twitter</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
