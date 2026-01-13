@@ -93,7 +93,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <div class="flex items-center gap-2">
-                <img alt="Pixel Trend Logo" class="h-10 w-auto rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxxfWT25by6Q2rBPov5HhEVWA3ZOgKMQ4IXPqy8zMy0KM0zO7Nrr5z5c9eXxcREAFBvhhXd8JVoLZiWMrfT9QnsNSAGL_J_N7lTjTtWFAoP9lx0zbU0FZmboMnaX0D2flq0kwy_WQHdP0SMAWxd4TG-KXq8vQl1CvfIhmi-eJ7Xfk7uE4hUnOWykujSKKpq6nP4nBn4nf_1x6dkH5c4kscyjRFqyK2b3940asjfM_EluaSP2qt5wH-nO3rH5MwlRnDrufgeskjC1o"/>
+                <img alt="Pixel Trend Logo" class="h-10 w-auto rounded-lg" src="Images/LogoPixelTrendSinFondo.png"/>
                 <span class="text-xl font-extrabold tracking-tight hidden sm:block">Pixel <span class="gradient-text">Trend</span></span>
             </div>
             <div class="hidden md:flex items-center space-x-8">
@@ -105,12 +105,26 @@
                     Hablemos
                 </a>
             </div>
-            <div class="md:hidden">
+            <button id="menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-slate-800 transition-colors">
                 <span class="material-icons-outlined">menu</span>
-            </div>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800">
+        <div class="px-4 py-6 space-y-4">
+            <a class="block text-base font-medium hover:text-primary transition-colors" href="#home">Inicio</a>
+            <a class="block text-base font-medium hover:text-primary transition-colors" href="#servicios">Servicios</a>
+            <a class="block text-base font-medium hover:text-primary transition-colors" href="#portfolio">Portafolio</a>
+            <a class="block text-base font-medium hover:text-primary transition-colors" href="#contacto">Contacto</a>
+            <a class="block bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full text-sm font-semibold text-center transition-all" href="#contacto">
+                Hablemos
+            </a>
         </div>
     </div>
 </nav>
+
 
 <main>
     <section id="home" class="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
@@ -521,6 +535,23 @@
         </div>
     </div>
 </footer>
-
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuToggle.querySelector('.material-icons-outlined');
+    
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+        });
+    });
+</script>
 </body>
 </html>
